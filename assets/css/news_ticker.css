@@ -1,0 +1,220 @@
+/* ==========================================================================
+   MG Education & Social Development Organization
+   Premium Responsive News Ticker CSS
+   ========================================================================== */
+
+.news-ticker-section {
+    width: 100%;
+    background: linear-gradient(90deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+    border-top: 1px solid #1e293b;
+    border-bottom: 1px solid #1e293b;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.news-ticker-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    position: relative;
+}
+
+/* Premium Live Alert Badge */
+.ticker-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #ef4444; /* Alert Red */
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    z-index: 5;
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4);
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+/* Pulse Dot Animation */
+.pulse-dot {
+    width: 7px;
+    height: 7px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    animation: alert-pulse 1.4s infinite;
+}
+
+@keyframes alert-pulse {
+    0% {
+        transform: scale(0.9);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 6px rgba(255, 255, 255, 0);
+    }
+    100% {
+        transform: scale(0.9);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+/* Scrolling Ticker Track Container */
+.ticker-track-container {
+    flex-grow: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 100%;
+}
+
+/* Gradients overlay to fade track edges */
+.ticker-track-container::before,
+.ticker-track-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.ticker-track-container::before {
+    left: 0;
+    background: linear-gradient(90deg, #0f172a 0%, transparent 100%);
+}
+
+.ticker-track-container::after {
+    right: 0;
+    background: linear-gradient(-90deg, #0f172a 0%, transparent 100%);
+}
+
+/* Sliding Track */
+.ticker-track {
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    padding-left: 10px;
+    animation: ticker-marquee 30s linear infinite;
+    width: max-content;
+}
+
+/* Pause on hover so notices can easily be clicked */
+.ticker-track-container:hover .ticker-track {
+    animation-play-state: paused;
+}
+
+/* Notice Item */
+.ticker-item {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 60px; /* Space between notices */
+    font-size: 14px;
+    color: #f8fafc;
+}
+
+.notice-icon {
+    color: #fbbf24; /* Glowing yellow alert icon */
+    margin-right: 8px;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.notice-link {
+    color: #e2e8f0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-weight: 550;
+    letter-spacing: 0.1px;
+}
+
+.notice-link:hover {
+    color: #38bdf8; /* Highlight link blue on hover */
+    text-decoration: underline;
+}
+
+/* Ticker Action Link */
+.ticker-action {
+    flex-shrink: 0;
+    margin-left: 20px;
+    z-index: 5;
+}
+
+.ticker-view-all {
+    color: #38bdf8;
+    text-decoration: none;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.2s ease;
+    background-color: rgba(56, 189, 248, 0.1);
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.ticker-view-all:hover {
+    background-color: #38bdf8;
+    color: #0f172a;
+    border-color: #38bdf8;
+}
+
+/* Infinite Scrolling Keyframes */
+@keyframes ticker-marquee {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0); /* Slides precisely half the width since we duplicate the list */
+    }
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+
+@media (max-width: 900px) {
+    .ticker-action {
+        display: none;
+    }
+    .ticker-badge {
+        margin-right: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .news-ticker-section {
+        height: 48px;
+    }
+    .news-ticker-container {
+        padding: 0 16px;
+    }
+    .ticker-badge {
+        padding: 4px 8px;
+        font-size: 10px;
+        margin-right: 8px;
+    }
+    .ticker-item {
+        font-size: 12.5px;
+        margin-right: 40px;
+    }
+}

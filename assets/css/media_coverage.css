@@ -1,0 +1,193 @@
+/* ==========================================================================
+   MG Education & Social Development Organization
+   Media Coverage / News Channel Logo Ticker CSS
+   Matching white scheme of Courses, Internships, Blogs, YouTube components
+   ========================================================================== */
+
+/* Section — white background matching other components */
+.media-coverage-section {
+    padding: 60px 0;
+    background-color: #ffffff;
+    border-top: 1px solid #eef2f6;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+}
+
+.media-coverage-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Header — left-aligned, same as courses/internships/blogs */
+.media-coverage-header {
+    margin-bottom: 32px;
+}
+
+.media-coverage-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1c1d1f;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.5px;
+}
+
+.media-coverage-header p {
+    font-size: 16px;
+    color: #6a6f73;
+    margin: 0;
+    line-height: 1.5;
+}
+
+
+/* =============== TICKER WRAPPER =============== */
+
+.media-ticker-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+/* Gradient fade edges — white to match background */
+.media-fade {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 90px;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.media-fade-left {
+    left: 0;
+    background: linear-gradient(90deg, #ffffff 0%, transparent 100%);
+}
+
+.media-fade-right {
+    right: 0;
+    background: linear-gradient(-90deg, #ffffff 0%, transparent 100%);
+}
+
+
+/* =============== TICKER TRACK (Infinite Scroll) =============== */
+
+.media-ticker-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: media-marquee 40s linear infinite;
+}
+
+/* Pause on hover */
+.media-ticker-wrapper:hover .media-ticker-track {
+    animation-play-state: paused;
+}
+
+@keyframes media-marquee {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+
+/* =============== LOGO CARD ITEMS =============== */
+
+.media-logo-item {
+    flex-shrink: 0;
+    margin: 0 14px;
+}
+
+.media-logo-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #ffffff;
+    border: 1px solid #d1d7dc;
+    border-radius: 8px;
+    padding: 16px 26px;
+    min-width: 170px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: default;
+}
+
+.media-logo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    border-color: #8c9096;
+}
+
+/* Channel Icon — sits inside a subtle tinted circle */
+.channel-icon {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #f7f9fa;
+    flex-shrink: 0;
+    transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.media-logo-card:hover .channel-icon {
+    transform: scale(1.12);
+    background-color: #eef2ff;
+}
+
+/* Channel Name Text */
+.channel-name {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #1c1d1f;
+    white-space: nowrap;
+    letter-spacing: -0.2px;
+}
+
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .media-coverage-section {
+        padding: 40px 0;
+    }
+
+    .media-coverage-header h2 {
+        font-size: 22px;
+        margin-bottom: 6px;
+    }
+
+    .media-coverage-header p {
+        font-size: 14px;
+    }
+
+    .media-logo-card {
+        padding: 12px 18px;
+        min-width: 140px;
+        gap: 10px;
+    }
+
+    .channel-icon {
+        font-size: 17px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .channel-name {
+        font-size: 13px;
+    }
+
+    .media-fade {
+        width: 45px;
+    }
+
+    .media-logo-item {
+        margin: 0 10px;
+    }
+}

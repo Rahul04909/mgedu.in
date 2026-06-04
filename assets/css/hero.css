@@ -1,0 +1,84 @@
+.hero-slider-container {
+    width: 100%;
+    margin: 0;
+    /* Full width, no margin */
+    padding: 0;
+    overflow: hidden;
+    height: 250px;
+    /* Restrict desktop height to 380px */
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f1f5f9;
+    height: 100%;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Maintain aspect ratio and fill container */
+    display: block;
+    image-rendering: -webkit-optimize-contrast;
+    /* Sharper images */
+}
+
+/* Custom Navigation Buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    background: rgba(255, 255, 255, 0.8);
+    width: 40px !important;
+    height: 80px !important;
+    color: #0d47a1 !important;
+    /* Primary Blue */
+    top: 50% !important;
+    margin-top: -40px !important;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.swiper-button-next {
+    right: 0 !important;
+    border-radius: 8px 0 0 8px;
+}
+
+.swiper-button-prev {
+    left: 0 !important;
+    border-radius: 0 8px 8px 0;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 16px !important;
+    font-weight: 800;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: #fff;
+    width: 45px !important;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none !important;
+        /* Hide arrows on mobile for a cleaner look */
+    }
+
+    .hero-slider-container {
+        height: 180px;
+        /* Restrict mobile height to 180px */
+    }
+}
