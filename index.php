@@ -1,6 +1,7 @@
 <?php require_once __DIR__ . '/includes/config.php'; ?>
 <?php include 'header.php'; ?>
-
+<?php error_reporting(E_ALL);
+ini_set('display_errors', 1);?>
 <!-- Main Hero Component -->
 <?php include 'components/hero.php'; ?>
 
