@@ -1,9 +1,9 @@
 # Dependency directories
 
 # Local environment configuration
-.env
-.env.local
-.env.*.local
+# .env
+# .env.local
+# .env.*.local
 
 # Mobile App (Flutter)
 /mobile_app/
