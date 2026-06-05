@@ -1,5 +1,4 @@
 # Dependency directories
-/vendor/
 
 # Local environment configuration
 .env
