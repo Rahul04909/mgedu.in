@@ -26,11 +26,11 @@ try {
     // If safeLoad fails, we fallback to default env
 }
 
-$db_host = $_ENV['DB_HOST'] ?? '127.0.0.1';
+$db_host = $_ENV['DB_HOST'] ?? 'localhost';
 $db_port = $_ENV['DB_PORT'] ?? '3306';
-$db_name = $_ENV['DB_NAME'] ?? 'mgedu_in';
-$db_user = $_ENV['DB_USER'] ?? 'root';
-$db_pass = $_ENV['DB_PASS'] ?? '';
+$db_name = $_ENV['DB_NAME'] ?? 'jghfrodu_mgeducation';
+$db_user = $_ENV['DB_USER'] ?? 'jghfrodu_mgeducation';
+$db_pass = $_ENV['DB_PASS'] ?? 'Rd14072003@./';
 
 $logs = [];
 $success = false;
